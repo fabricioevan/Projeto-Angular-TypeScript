@@ -1,0 +1,25 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Id do Professor</th>
+                <th scope="col">Aulas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of cursos">
+                <th scope="row">{{c.id}}</th>
+                <td>{{c.nome}}</td>
+                <td>{{c.descricao}}</td>
+                <td>{{c.idProfessor}}</td>
+                <td>
+                    <p *ngFor="let aula of c.aulas">{{aula.nome}}</p>
+                </td>
+                <td><button type="button" class="btn btn-primary" (click)="listar(c.id)" >Listar Aulas</button></td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

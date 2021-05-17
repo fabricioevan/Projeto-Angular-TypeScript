@@ -1,0 +1,42 @@
+<div [formGroup]="aulaForm">
+    <div class="form-group">
+        <label for="nome" class="form-label">Nome</label>
+        <input class="form-control" name="nome" id="nome" formControlName="nome">
+        <div *ngIf="aulaForm.get('nome').invalid && (aulaForm.get('nome').dirty || aulaForm.get('nome').touched)"
+            class="alert alert-danger">
+            <div *ngIf="aulaForm.get('nome').errors.required">
+                Nome é obrigatório.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="duracao" class="form-label">Duração</label>
+        <input class="form-control" name="duracao" id="duracao" formControlName="duracao">
+        <div *ngIf="aulaForm.get('duracao').invalid && aulaForm.get('duracao').touched" class="alert alert-danger">
+            <div *ngIf="aulaForm.get('duracao').errors.required ">
+                Duração é obrigatório.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="topicos" class="form-label">Tópico</label>
+        <input class="form-control" name="topicos" id="topicos" formControlName="topicos">
+        <div *ngIf="aulaForm.get('topicos').invalid && aulaForm.get('topicos').touched " class="alert alert-danger">
+            <div *ngIf="aulaForm.get('topicos').errors.required">
+                Tópicos é obrigatório.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="idCurso" class="form-label">Id do Curso</label>
+        <input class="form-control" name="idCurso" id="idCurso" formControlName="idCurso">
+        <div *ngIf="aulaForm.get('idCurso').invalid && aulaForm.get('idCurso').touched " class="alert alert-danger">
+            <div *ngIf="aulaForm.get('idCurso').errors.required">
+                idCurso é obrigatório.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-success" (click)="salvar()">{{textoBotao}}</button>
+    </div>
+</div>

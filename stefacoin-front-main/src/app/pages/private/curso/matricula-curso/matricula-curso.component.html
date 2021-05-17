@@ -1,0 +1,46 @@
+<div [formGroup]="matriculaForm">
+    <div class="form-group">
+        <label for="nome" class="form-label">Nome  </label>
+        <input class="form-control" name="nome" id="nome" formControlName="nome">
+        <div *ngIf="matriculaForm.get('nome').invalid && (matriculaForm.get('nome').dirty || matriculaForm.get('nome').touched)"
+            class="alert alert-danger">
+            <div *ngIf="matriculaForm.get('nome').errors.required">
+                Nome é obrigatório.
+            </div>
+        </div>
+    </div>    
+    <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" id="email" formControlName="email">
+        <div *ngIf="matriculaForm.get('email').invalid && (matriculaForm.get('email').dirty || matriculaForm.get('email').touched)"
+            class="alert alert-danger">
+            <div *ngIf="matriculaForm.get('email').errors.required">
+                Email é obrigatório.
+            </div>
+            <div *ngIf="matriculaForm.get('email').errors.email">
+                Email inválido.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" name="senha" id="senha" formControlName="senha"
+            aria-describedby="passwordHelpBlock">
+    </div>
+    <div class="form-group">
+        <label for="formacao" class="form-label">Formação</label>
+        <input  class="form-control" name="formacao" id="formacao" formControlName="formacao">
+    </div>
+    <div class="form-group">
+        <label for="idade" class="form-label">Idade</label>
+        <input  class="form-control" name="idade" id="idade" formControlName="idade">
+    </div>
+    <div class="form-group">
+        <label for="idCurso" class="form-label">ID do Curso</label>
+        <input  class="form-control" name="idCurso" id="idCurso" formControlName="idCurso">
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-success" (click)="salvar()">{{textoBotao}}</button>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Avaliação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of aluno?.cursos">
+                <th scope="row">{{a.id}}</th>
+                <td>{{a.nome}}</td>
+                <td> 
+                    <div class="form-group">
+                        <input type="range" min="0" max="5" class="custom-range" name="avaliacao" id="avaliacao" [(ngModel)]="a.avaliacao">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="salvar()">Salvar Avaliações</button>
+</div>

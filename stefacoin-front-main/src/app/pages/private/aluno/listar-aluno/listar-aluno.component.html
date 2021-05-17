@@ -1,0 +1,21 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of alunos">
+                <th scope="row">{{a.id}}</th>
+                <td>{{a.nome}}</td>
+                <td>{{a.email}}</td>
+                <td>{{a.idade}}</td>
+                <td>{{a.formacao}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

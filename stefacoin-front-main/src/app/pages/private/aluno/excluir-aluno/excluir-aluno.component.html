@@ -1,0 +1,20 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of alunos">
+                <th scope="row">{{a.id}}</th>
+                <td>{{a.nome}}</td>
+                <td>{{a.email}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="excluir(a.id)">Excluir</button></td>
+                <td><button type="button" class="btn btn-warning" (click)="editar(a.id)">Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
