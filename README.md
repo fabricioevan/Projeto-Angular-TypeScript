@@ -1,5 +1,5 @@
 # Projeto realizado no Hackathon da Stefanini
-- TypeScrip
+- TypeScript
 - Angular2
 - Html 
 - Css
